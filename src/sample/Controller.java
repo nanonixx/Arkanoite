@@ -6,7 +6,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
-import javafx.stage.Window;
 
 import java.io.IOException;
 
@@ -22,6 +21,13 @@ public class Controller {
         stage.setTitle("Arkanoite jugando");
         stage.setScene(scene);
         stage.show();
+
+
+        Ball ball = new Ball();
+        ball.start(stage);
+
+
+
     }
 
     public void exit(ActionEvent actionEvent) {

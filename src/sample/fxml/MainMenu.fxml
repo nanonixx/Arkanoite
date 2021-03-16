@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.effect.*?>
 <?import javafx.scene.chart.*?>
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.paint.*?>
@@ -38,7 +39,7 @@
             </Label>
             <Rectangle arcHeight="5.0" arcWidth="5.0" height="200.0" layoutY="195.0" stroke="BLACK" strokeType="INSIDE" width="706.0">
                <fill>
-                  <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                  <RadialGradient centerX="0.48876404494382025" centerY="0.5" focusAngle="-56.31" focusDistance="-0.09523809523809523" radius="0.5357142857142857">
                      <stops>
                         <Stop color="#4725c3b2" />
                         <Stop color="#4725c3b2" offset="0.007407407407407408" />
@@ -62,8 +63,11 @@
                      </stops>
                   </LinearGradient>
                </fill>
+               <effect>
+                  <Reflection />
+               </effect>
             </QuadCurve>
-            <QuadCurve controlX="-50.0" controlY="-100.0" endX="50.0" layoutX="613.0" layoutY="109.0" startX="-50.0" stroke="BLACK" strokeType="INSIDE">
+            <QuadCurve controlX="-50.0" controlY="-100.0" endX="50.0" layoutX="613.0" layoutY="109.0" nodeOrientation="RIGHT_TO_LEFT" startX="-50.0" stroke="BLACK" strokeType="INSIDE">
                <fill>
                   <LinearGradient endX="1.0" endY="1.0">
                      <stops>
@@ -73,12 +77,24 @@
                      </stops>
                   </LinearGradient>
                </fill>
+               <effect>
+                  <Reflection />
+               </effect>
             </QuadCurve>
-            <Button layoutX="297.0" layoutY="295.0" mnemonicParsing="false" onAction="#exit" prefHeight="54.0" prefWidth="100.0" text="EXIT" />
-            <Button layoutX="274.0" layoutY="219.0" mnemonicParsing="false" onAction="#start" prefHeight="54.0" prefWidth="147.0" text="START GAME">
+            <Button layoutX="297.0" layoutY="295.0" mnemonicParsing="false" onAction="#exit" prefHeight="54.0" prefWidth="100.0" text="EXIT" textFill="#130539">
                <font>
                   <Font name="Nakula" size="13.0" />
                </font>
+               <effect>
+                  <DropShadow />
+               </effect></Button>
+            <Button layoutX="274.0" layoutY="219.0" mnemonicParsing="false" onAction="#start" prefHeight="54.0" prefWidth="147.0" text="START GAME">
+               <font>
+                  <Font name="Waree" size="13.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect>
             </Button>
          </children></AnchorPane>
    </children>
