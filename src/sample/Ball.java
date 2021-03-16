@@ -16,18 +16,22 @@ import javafx.util.Duration;
 
 public class Ball extends Application{
 
+
+
+
     @Override
     public void start(Stage stage) {
 
+        String CSS_PATH = "/sample/css/game.css";
+
         Pane canvas = new Pane();
-        Scene scene = new Scene(canvas, 1000, 600, Color.ALICEBLUE);
-        Circle ball = new Circle(10, Color.CADETBLUE);
+        Scene scene = new Scene(canvas, 1000, 600, Color.TRANSPARENT);
+        Circle ball = new Circle(10, Color.YELLOW);
         ball.relocate(5, 5);
 
-        Circle ball1 = new Circle(10, Color.CADETBLUE);
-
-        canvas.getChildren().add(ball);
+        scene.getStylesheets().add(String.valueOf(Main.class.getResource(CSS_PATH)));
         stage.setScene(scene);
+        canvas.getChildren().add(ball);
         stage.show();
 
         Timeline timeline = new Timeline(new KeyFrame(Duration.millis(50), new EventHandler<ActionEvent>() {

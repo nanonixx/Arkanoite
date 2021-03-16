@@ -11,9 +11,7 @@ import java.io.IOException;
 
 public class Controller {
     public void start(ActionEvent actionEvent) throws IOException {
-        Button b = (Button) actionEvent.getSource();
-
-
+//        Button b = (Button) actionEvent.getSource();
 
         Parent root = FXMLLoader.load(getClass().getResource("/sample/fxml/Game.fxml"));
         Stage stage = new Stage();
