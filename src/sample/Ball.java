@@ -29,10 +29,15 @@ public class Ball extends Application{
         Circle ball = new Circle(10, Color.YELLOW);
         ball.relocate(5, 5);
 
+        Brick brick = new Brick(30, 30, Color.MAGENTA);
+        canvas.getChildren().add(brick.draw()); //DIBUJA LADRILLO
+
         scene.getStylesheets().add(String.valueOf(Main.class.getResource(CSS_PATH)));
         stage.setScene(scene);
         canvas.getChildren().add(ball);
         stage.show();
+
+
 
         Timeline timeline = new Timeline(new KeyFrame(Duration.millis(50), new EventHandler<ActionEvent>() {
 
