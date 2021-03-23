@@ -32,11 +32,11 @@ public class Pad {
             public void handle(KeyEvent keyEvent) {
                 switch(keyEvent.getCode()){
                     case A:
-                        x--;
+                        x = x - 7;
                         draw();
                         break;
                     case D:
-                        x++;
+                        x = x + 7;
                         draw();
                         break;
                 }

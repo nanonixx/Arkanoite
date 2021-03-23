@@ -23,6 +23,9 @@ public class GameController extends Application {
         Pane canvas = new Pane();
         Scene scene = new Scene(canvas, 1000, 600, Color.TRANSPARENT);
 
+        BrickFactory brickFactory = new BrickFactory();
+        brickFactory.createBrickPattern(canvas);
+
         Pad pad = new Pad(500);
         Ball ball = new Ball(5,5);
 
