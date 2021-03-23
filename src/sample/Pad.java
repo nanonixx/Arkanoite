@@ -31,13 +31,17 @@ public class Pad {
             @Override
             public void handle(KeyEvent keyEvent) {
                 switch(keyEvent.getCode()){
-                    case A:
-                        x = x - 7;
-                        draw();
+                    case A: case LEFT:
+                        if(x > 0) {
+                            x = x - 7;
+                            draw();
+                        }
                         break;
-                    case D:
-                        x = x + 7;
-                        draw();
+                    case D: case RIGHT:
+                        if(x < 900) {
+                            x = x + 7;
+                            draw();
+                        }
                         break;
                 }
                 System.out.println(x);
