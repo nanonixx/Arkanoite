@@ -3,12 +3,12 @@ package sample;
 
 import javafx.animation.Timeline;
 import javafx.application.Application;
-import javafx.event.ActionEvent;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
-import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
+import sample.Brick.Brick;
+import sample.Brick.BrickFactory;
 
 public class GameController extends Application {
 
@@ -22,9 +22,10 @@ public class GameController extends Application {
         //Circle ball = new Circle(10, Color.YELLOW);
         //ball.relocate(5, 5);
 
-        Brick brick = new Brick(30, 30, Color.MAGENTA);
+        BrickFactory bf = new BrickFactory();
+        bf.createBrickPattern(canvas);
+
         Ball ball = new Ball(5,5);
-        canvas.getChildren().add(brick.draw()); //DIBUJA LADRILLO
         canvas.getChildren().add(ball.pelotinga);
         ball.timeline.setCycleCount(Timeline.INDEFINITE);
         ball.timeline.play();

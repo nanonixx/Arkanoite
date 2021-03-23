@@ -1,25 +1,18 @@
 package sample;
 
-import javafx.beans.Observable;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.image.Image;
-import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-
-import java.io.IOException;
 
 public class Controller {
     public void start(ActionEvent actionEvent) throws Exception {
 
         Parent root = FXMLLoader.load(getClass().getResource("/sample/fxml/Game.fxml"));
         Stage stage = new Stage();
-        stage.getIcons().add(new Image("/sample/arkanoite_icon.png"));
+        stage.getIcons().add(new Image("/sample/images/arkanoite_icon.png"));
         Scene scene = new Scene(root);
         stage.setTitle("Arkanoite jugando");
         stage.setScene(scene);

@@ -10,12 +10,10 @@ import javafx.stage.Stage;
 
 public class Main extends Application {
 
-    String CSS_PATH = "/sample/css/game.css";
-
     @Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("fxml/MainMenu.fxml"));
-        primaryStage.getIcons().add(new Image("/sample/arkanoite_icon.png"));
+        primaryStage.getIcons().add(new Image("/sample/images/arkanoite_icon.png"));
         primaryStage.setTitle("Arkanoite");
         primaryStage.setScene(new Scene(root));
         primaryStage.show();

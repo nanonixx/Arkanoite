@@ -1,13 +1,12 @@
-package sample;
+package sample.Brick;
 
-import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
 
 public class Brick {
 
-    double WIDTH = 200, HEIGHT = 50;
+    double WIDTH = 110, HEIGHT = 40;
     double dx, dy; //posicion
     Color color;
 
@@ -19,12 +18,17 @@ public class Brick {
     }
 
     public Shape draw(){
-        Rectangle rectangle = new Rectangle(WIDTH, HEIGHT, Color.MAGENTA);
+        Rectangle rectangle = new Rectangle(WIDTH, HEIGHT, color);
         rectangle.setX(dx);
         rectangle.setY(dy);
-        // ¿?
+
+
         return rectangle;
     }
+
+
+
+
 
 
 
