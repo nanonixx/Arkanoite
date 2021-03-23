@@ -20,8 +20,6 @@ public class Controller {
 
         GameController gameController = new GameController();
         gameController.start(stage);
-//        Ball ball = new Ball();
-//        ball.start(stage);
 
     }
 

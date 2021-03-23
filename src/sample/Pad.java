@@ -1,26 +1,47 @@
 package sample;
 
-import javafx.application.Application;
-import javafx.geometry.Rectangle2D;
-import javafx.scene.canvas.GraphicsContext;
+
+import javafx.event.EventHandler;
+import javafx.scene.Scene;
 import javafx.scene.input.KeyEvent;
-import javafx.stage.Stage;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
+import javafx.scene.shape.Shape;
 
-import java.awt.*;
 
-public class Pad{
+public class Pad {
 
     int x;
-    int y = 0;
-    Rectangle rec = new Rectangle(20,50);
+    int y = 500;
 
-    public Pad(int x, int y) {
+    public Pad(int x) {
         this.x = x;
         this.y = y;
     }
 
-    public void movePad(){
-        if(Keyevent.a && x > 0) x--;
-        if(Keyevent.d && x < 1000) x++;
+    Rectangle rectangle = new Rectangle(100, 50, Color.YELLOWGREEN);
+
+    public Shape draw(){
+        this.rectangle.relocate(x,y);
+        return this.rectangle;
+    }
+
+    public void movePad(Scene scene){
+        scene.setOnKeyPressed(new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent keyEvent) {
+                switch(keyEvent.getCode()){
+                    case A:
+                        x--;
+                        draw();
+                        break;
+                    case D:
+                        x++;
+                        draw();
+                        break;
+                }
+                System.out.println(x);
+            }
+        });
     }
 }
