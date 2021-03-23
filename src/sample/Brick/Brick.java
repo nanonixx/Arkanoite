@@ -6,9 +6,18 @@ import javafx.scene.shape.Shape;
 
 public class Brick {
 
-    double WIDTH = 110, HEIGHT = 40;
+    private final double WIDTH = 110;
+    private final double HEIGHT = 40;
     double dx, dy; //posicion
     Color color;
+
+    public double getWIDTH() {
+        return WIDTH;
+    }
+
+    public double getHEIGHT() {
+        return HEIGHT;
+    }
 
     public Brick(double dx, double dy, Color c) {
         this.dx = dx;
