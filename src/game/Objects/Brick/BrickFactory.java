@@ -1,4 +1,4 @@
-package sample.Brick;
+package game.Objects.Brick;
 
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;

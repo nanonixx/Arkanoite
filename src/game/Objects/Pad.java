@@ -1,15 +1,19 @@
-package sample;
+package game.Objects;
 
 
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Color;
+import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
 
 
 public class Pad {
+
+    Image image = new Image("/game/images/tristesa.png");
 
     int x;
     int y = 500;
@@ -19,10 +23,15 @@ public class Pad {
         this.y = y;
     }
 
-    Rectangle rectangle = new Rectangle(100, 50, Color.YELLOWGREEN);
+    public Rectangle rectangle = new Rectangle(110, 42, Color.YELLOWGREEN);
+
+
 
     public Shape draw(){
         this.rectangle.relocate(x,y);
+        ImagePattern imageView = new ImagePattern(image);
+        rectangle.setFill(imageView);
+
         return this.rectangle;
     }
 
@@ -44,7 +53,6 @@ public class Pad {
                         }
                         break;
                 }
-                System.out.println(x);
             }
         });
     }

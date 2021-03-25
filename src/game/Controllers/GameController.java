@@ -1,4 +1,4 @@
-package sample;
+package game.Controllers;
 
 
 import javafx.animation.KeyFrame;
@@ -7,20 +7,21 @@ import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
-import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 import javafx.util.Duration;
-import sample.Brick.BrickFactory;
+import game.Objects.Ball;
+import game.Objects.Brick.BrickFactory;
+import game.Main;
+import game.Objects.Pad;
 
 public class GameController extends Application {
 
 
     @Override
     public void start(Stage stage) throws Exception {
-        String CSS_PATH = "/sample/css/game.css";
+        String CSS_PATH = "/game/css/game.css";
 
         Pane canvas = new Pane();
         Scene scene = new Scene(canvas, 1000, 600, Color.TRANSPARENT);

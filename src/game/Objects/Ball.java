@@ -1,20 +1,11 @@
-package sample;
+package game.Objects;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
-import javafx.application.Application;
 import javafx.event.ActionEvent;
-import javafx.event.Event;
 import javafx.event.EventHandler;
-import javafx.geometry.Bounds;
-import javafx.geometry.Rectangle2D;
-import javafx.scene.Scene;
-import javafx.scene.canvas.Canvas;
-import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
-import javafx.scene.shape.Rectangle;
-import javafx.stage.Stage;
 import javafx.util.Duration;
 
 public class Ball{
@@ -35,9 +26,9 @@ public class Ball{
         this.y = y;
     }
 
-    Circle pelotinga = new Circle(10, Color.YELLOW);
+    public Circle pelotinga = new Circle(10, Color.YELLOW);
 
-    Timeline timeline = new Timeline(new KeyFrame(Duration.millis(25), new EventHandler<ActionEvent>() {
+    public Timeline timeline = new Timeline(new KeyFrame(Duration.millis(25), new EventHandler<ActionEvent>() {
 
 
         @Override

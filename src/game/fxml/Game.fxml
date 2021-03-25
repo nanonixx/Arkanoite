@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.*?>
 
 
-<AnchorPane prefHeight="650.0" prefWidth="1000.0" stylesheets="/sample/css/game.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.GameController">
+<AnchorPane prefHeight="650.0" prefWidth="1000.0" stylesheets="/game/css/game.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.Controllers.GameController">
    <children>
       <Canvas height="650.0" layoutX="2.0" width="1000.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
    </children>
