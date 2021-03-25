@@ -56,6 +56,8 @@ public class BrickFactory {
 
             Brick brick = new Brick(dx, dy+220, Color.CYAN);
             canvas.getChildren().add(brick.draw());
+            brick.id = i;
+
             dx = dx + brick.getWIDTH() + 20; //deja un espacio de 20px
 
         }

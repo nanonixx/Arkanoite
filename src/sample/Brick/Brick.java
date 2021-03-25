@@ -6,6 +6,7 @@ import javafx.scene.shape.Shape;
 
 public class Brick {
 
+    int id;
     private final double WIDTH = 110;
     private final double HEIGHT = 40;
     double dx, dy; //posicion

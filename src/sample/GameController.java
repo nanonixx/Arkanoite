@@ -1,16 +1,19 @@
 package sample;
 
 
+import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.geometry.Bounds;
 import javafx.scene.Scene;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 import sample.Brick.BrickFactory;
 
 public class GameController extends Application {
@@ -40,5 +43,21 @@ public class GameController extends Application {
         scene.getStylesheets().add(String.valueOf(Main.class.getResource(CSS_PATH)));
         stage.setScene(scene);
         stage.show();
-    }
+
+        Timeline timeline = new Timeline(new KeyFrame(Duration.millis(50), new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                if (ball.pelotinga.getBoundsInParent().intersects(pad.rectangle.getBoundsInParent())){
+                    ball.y = -ball.y;
+                    System.out.println("sa chocao");
+                }
+
+            }
+
+        }));
+
+        timeline.setCycleCount(Timeline.INDEFINITE);
+        timeline.play();
+}
+
 }

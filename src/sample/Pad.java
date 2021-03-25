@@ -2,6 +2,7 @@ package sample;
 
 
 import javafx.event.EventHandler;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Scene;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Color;
@@ -12,17 +13,29 @@ import javafx.scene.shape.Shape;
 public class Pad {
 
     int x;
-    int y = 500;
+    int y = 500; //posicion inicial
+
+    private final int HEIGHT = 50;
+    private final int WIDTH = 100;
+
+    public int getHEIGHT() {
+        return HEIGHT;
+    }
+
+    public int getWIDTH() {
+        return WIDTH;
+    }
 
     public Pad(int x) {
         this.x = x;
-        this.y = y;
     }
 
-    Rectangle rectangle = new Rectangle(100, 50, Color.YELLOWGREEN);
+    Rectangle rectangle = new Rectangle(WIDTH, HEIGHT, Color.YELLOWGREEN);
+
 
     public Shape draw(){
-        this.rectangle.relocate(x,y);
+        rectangle.setX(x);
+        rectangle.setY(y);
         return this.rectangle;
     }
 
@@ -33,18 +46,17 @@ public class Pad {
                 switch(keyEvent.getCode()){
                     case A: case LEFT:
                         if(x > 0) {
-                            x = x - 7;
+                            x = x - 17;
                             draw();
                         }
                         break;
                     case D: case RIGHT:
                         if(x < 900) {
-                            x = x + 7;
+                            x = x + 17;
                             draw();
                         }
                         break;
                 }
-                System.out.println(x);
             }
         });
     }
