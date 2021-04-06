@@ -11,7 +11,7 @@ import javafx.util.Duration;
 public class Ball{
 
     private double x = 7;
-    private double y = 3;
+    private double y  = -3;
 
     public double getY() {
         return y;
@@ -22,14 +22,13 @@ public class Ball{
     }
 
     public Ball(int x, int y) {
-        this.x = x;
-        this.y = y;
+        pelotinga.setLayoutX(x);
+        pelotinga.setLayoutY(y);
     }
 
     public Circle pelotinga = new Circle(10, Color.YELLOW);
 
     public Timeline timeline = new Timeline(new KeyFrame(Duration.millis(25), new EventHandler<ActionEvent>() {
-
 
         @Override
         public void handle(ActionEvent actionEvent) {
@@ -42,10 +41,14 @@ public class Ball{
                 if (pelotinga.getLayoutX() < 0 || pelotinga.getLayoutX() > 1000)
                     x = -x;
 
-                if (pelotinga.getLayoutY() < 0 || pelotinga.getLayoutY() > 600)
+                if (pelotinga.getLayoutY() < 0)
                     y = -y;
 
-
+                if(pelotinga.getLayoutY() > 600){
+                    y = -y;
+                    pelotinga.setLayoutX(0);
+                    pelotinga.setLayoutY(599);
+                }
         }
     }));
 
