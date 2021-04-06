@@ -1,6 +1,7 @@
 package game.Controllers;
 
 
+import game.Objects.Brick.Brick;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.application.Application;
@@ -51,7 +52,17 @@ public class GameController extends Application {
                 if (ball.pelotinga.getBoundsInParent().intersects(pad.rectangle.getBoundsInParent())){
                     ball.setY(ball.getY() * -1);
                 }
-            }
+
+                for (Brick b: brickFactory.getBrickList()) {
+                    if (ball.pelotinga.getBoundsInParent().intersects(b.rectangle.getBoundsInParent())) {
+                        b.color = Color.TRANSPARENT;
+                        canvas.getChildren().remove(b.rectangle);
+                        brickFactory.getBrickList().remove(b);
+                        ball.setY(ball.getY() * -1);
+                        System.out.println(brickFactory.getBrickList().size());
+                    }
+                }
+                }
         }));
 
         timeline.setCycleCount(Timeline.INDEFINITE);

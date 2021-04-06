@@ -9,7 +9,17 @@ public class Brick {
     private final double WIDTH = 110;
     private final double HEIGHT = 40;
     double dx, dy; //posicion
-    Color color;
+    private String id;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public Color color;
 
     public double getWIDTH() {
         return WIDTH;
@@ -26,8 +36,10 @@ public class Brick {
 
     }
 
+    public Rectangle rectangle;
+
     public Shape draw(){
-        Rectangle rectangle = new Rectangle(WIDTH, HEIGHT, color);
+        rectangle = new Rectangle(WIDTH, HEIGHT, color);
         rectangle.setX(dx);
         rectangle.setY(dy);
 
