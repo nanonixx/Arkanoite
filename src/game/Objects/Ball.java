@@ -1,5 +1,6 @@
 package game.Objects;
 
+import game.Controllers.GameController;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
@@ -9,6 +10,8 @@ import javafx.scene.shape.Circle;
 import javafx.util.Duration;
 
 public class Ball{
+
+    GameController gameController;
 
     private double x = 7;
     private double y  = -3;
@@ -44,11 +47,7 @@ public class Ball{
                 if (pelotinga.getLayoutY() < 0)
                     y = -y;
 
-                if(pelotinga.getLayoutY() > 600){
-                    y = -y;
-                    pelotinga.setLayoutX(0);
-                    pelotinga.setLayoutY(599);
-                }
+
         }
     }));
 

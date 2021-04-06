@@ -8,8 +8,10 @@ import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import game.Objects.Ball;
@@ -18,14 +20,31 @@ import game.Main;
 import game.Objects.Pad;
 
 public class GameController extends Application {
+    int scoreCount = 0;
+    Label scoreLabel = new Label("Score: " + scoreCount);
 
+    public int livesCount = 3;
+    Label livesLabel = new Label("Lives: " + livesCount);
 
     @Override
     public void start(Stage stage) throws Exception {
         String CSS_PATH = "/game/css/game.css";
 
         Pane canvas = new Pane();
-        Scene scene = new Scene(canvas, 1000, 600, Color.TRANSPARENT);
+
+        scoreLabel.setLayoutY(565);
+        scoreLabel.setLayoutX(30);
+        scoreLabel.setFont(Font.font(20));
+        scoreLabel.setTextFill(Color.WHITE);
+
+        livesLabel.setLayoutY(565);
+        livesLabel.setLayoutX(850);
+        livesLabel.setFont(Font.font(20));
+        livesLabel.setTextFill(Color.WHITE);
+
+
+
+        Scene scene = new Scene(canvas, 1000, 600);
 
         BrickFactory brickFactory = new BrickFactory();
         brickFactory.createBrickPattern(canvas);
@@ -33,8 +52,15 @@ public class GameController extends Application {
         Pad pad = new Pad(500);
         Ball ball = new Ball(0,599);
 
+
+
         canvas.getChildren().add(ball.pelotinga);
         canvas.getChildren().add(pad.draw());
+        canvas.getChildren().add(scoreLabel);
+        canvas.getChildren().add(livesLabel);
+
+
+
 
         ball.timeline.setCycleCount(Timeline.INDEFINITE);
         ball.timeline.play();
@@ -60,9 +86,23 @@ public class GameController extends Application {
                         canvas.getChildren().remove(b.rectangle);
                         brickFactory.getBrickList().remove(b);
                         ball.setY(ball.getY() * -1);
-                        System.out.println(brickFactory.getBrickList().size());
+                        scoreCount+=10;
+                        scoreLabel.setText("Score: " + scoreCount);
+                        canvas.getChildren().add(scoreLabel);
+
                     }
                 }
+
+                if(ball.pelotinga.getLayoutY() > 600){
+                    ball.setY(ball.getY() * -1);
+                    ball.pelotinga.setLayoutX(0);
+                    ball.pelotinga.setLayoutY(599);
+                    livesCount--;
+                    livesLabel.setText("Lives: " + livesCount);
+                    canvas.getChildren().add(livesLabel);
+
+                }
+
                 }
         }));
 
