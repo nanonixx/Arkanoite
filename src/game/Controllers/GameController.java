@@ -50,6 +50,9 @@ public class GameController extends Application {
         gameOver.setFont(Font.font(20));
         gameOver.setTextFill(Color.WHITE);
 
+        nextLevel.setLayoutX(300);
+        nextLevel.setLayoutY(500);
+        nextLevel.setText("palante");
 
 
         Scene scene = new Scene(canvas, 1000, 600);
@@ -89,6 +92,9 @@ public class GameController extends Application {
                 }
 
                 for (Brick b: brickFactory.getBrickList()) {
+                    //para no tener que jugarlo todo
+//                    canvas.getChildren().remove(b.rectangle);
+//                    brickFactory.getBrickList().remove(b);
                     if (ball.pelotinga.getBoundsInParent().intersects(b.rectangle.getBoundsInParent())) {
                         b.color = Color.TRANSPARENT;
                         canvas.getChildren().remove(b.rectangle);
@@ -100,9 +106,9 @@ public class GameController extends Application {
 
                     }
                 }
-
+                //TODO HACER UN REINICIO A UN NUEVO NIVEL
                 if(brickFactory.getBrickList().isEmpty()){
-                    canvas.getChildren().clear();
+
                 }
 
                 if(ball.pelotinga.getLayoutY() > 600){

@@ -21,6 +21,8 @@ public class Controller {
         GameController gameController = new GameController();
         gameController.start(stage);
 
+
+
     }
 
     public void exit(ActionEvent actionEvent) {
