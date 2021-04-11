@@ -8,6 +8,7 @@ import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
@@ -25,6 +26,8 @@ public class GameController extends Application {
 
     public int livesCount = 3;
     Label livesLabel = new Label("Lives: " + livesCount);
+    Label gameOver = new Label("ah te moriste");
+    Button nextLevel = new Button();
 
     @Override
     public void start(Stage stage) throws Exception {
@@ -41,6 +44,11 @@ public class GameController extends Application {
         livesLabel.setLayoutX(850);
         livesLabel.setFont(Font.font(20));
         livesLabel.setTextFill(Color.WHITE);
+
+        gameOver.setLayoutY(300);
+        gameOver.setLayoutX(500);
+        gameOver.setFont(Font.font(20));
+        gameOver.setTextFill(Color.WHITE);
 
 
 
@@ -93,13 +101,28 @@ public class GameController extends Application {
                     }
                 }
 
+                if(brickFactory.getBrickList().isEmpty()){
+                    canvas.getChildren().clear();
+                }
+
                 if(ball.pelotinga.getLayoutY() > 600){
                     ball.setY(ball.getY() * -1);
                     ball.pelotinga.setLayoutX(0);
                     ball.pelotinga.setLayoutY(599);
                     livesCount--;
-                    livesLabel.setText("Lives: " + livesCount);
-                    canvas.getChildren().add(livesLabel);
+
+                    if(livesCount == 0){
+
+                        canvas.getChildren().clear();
+                        canvas.getChildren().add(gameOver);
+                        ball.timeline.stop();
+
+                    }else {
+
+                        livesLabel.setText("Lives: " + livesCount);
+                        canvas.getChildren().add(livesLabel);
+
+                    }
 
                 }
 
