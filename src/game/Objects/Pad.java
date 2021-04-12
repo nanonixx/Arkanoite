@@ -42,13 +42,13 @@ public class Pad {
                 switch(keyEvent.getCode()){
                     case A: case LEFT:
                         if(x > 0) {
-                            x = x - 15;
+                            x = x - 25;
                             draw();
                         }
                         break;
                     case D: case RIGHT:
                         if(x < 900) {
-                            x = x + 15;
+                            x = x + 25;
                             draw();
                         }
                         break;

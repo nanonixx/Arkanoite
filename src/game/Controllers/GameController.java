@@ -31,6 +31,7 @@ public class GameController extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
+        //TODO METER TOT (BRICKS, RESETEAR ""VIDAS"", Y POSICION DE PELOTA Y PAD) EN UNA FUNCION PARA INICIALIZAR
         String CSS_PATH = "/game/css/game.css";
 
         Pane canvas = new Pane();
