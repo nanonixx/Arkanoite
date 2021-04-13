@@ -109,7 +109,7 @@ public class GameController extends Application {
                 }
                 //TODO HACER UN REINICIO A UN NUEVO NIVEL
                 if(brickFactory.getBrickList().isEmpty()){
-
+                    restart(canvas, ball, pad, brickFactory);
                 }
 
                 if(ball.pelotinga.getLayoutY() > 600){
@@ -138,5 +138,15 @@ public class GameController extends Application {
 
         timeline.setCycleCount(Timeline.INDEFINITE);
         timeline.play();
+    }
+    public void restart(Pane canvas, Ball ball, Pad pad, BrickFactory brickFactory){
+        brickFactory.createBrickPattern(canvas);
+        ball.pelotinga.setLayoutX(0);
+        ball.pelotinga.setLayoutY(599);
+        pad.rectangle.setLayoutX(500);
+        ball.setX(ball.getX() * 1.3);
+        ball.setY(ball.getY() * 1.3);
+
+
     }
 }

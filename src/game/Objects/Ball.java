@@ -16,6 +16,14 @@ public class Ball{
     private double x = 7;
     private double y  = -3;
 
+    public double getX() {
+        return x;
+    }
+
+    public void setX(double x) {
+        this.x = x;
+    }
+
     public double getY() {
         return y;
     }
