@@ -5,13 +5,17 @@ import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
+import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
 import javafx.util.Duration;
 
 public class Ball{
 
     GameController gameController;
+
+
 
     private double x = 7;
     private double y  = -3;
@@ -39,7 +43,10 @@ public class Ball{
 
     public Circle pelotinga = new Circle(10, Color.YELLOW);
 
+
+
     public Timeline timeline = new Timeline(new KeyFrame(Duration.millis(25), new EventHandler<ActionEvent>() {
+
 
         @Override
         public void handle(ActionEvent actionEvent) {

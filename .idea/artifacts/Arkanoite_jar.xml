@@ -1,0 +1,17 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Arkanoite:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Arkanoite_jar</output-path>
+    <root id="archive" name="Arkanoite.jar">
+      <element id="module-output" name="Arkanoite" />
+      <element id="extracted-dir" path="$JAVAFX_HOME$/lib/src.zip" path-in-jar="/" />
+      <element id="extracted-dir" path="$JAVAFX_HOME$/lib/javafx-swt.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$JAVAFX_HOME$/lib/javafx.web.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$JAVAFX_HOME$/lib/javafx.base.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$JAVAFX_HOME$/lib/javafx.fxml.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$JAVAFX_HOME$/lib/javafx.media.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$JAVAFX_HOME$/lib/javafx.swing.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$JAVAFX_HOME$/lib/javafx.controls.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$JAVAFX_HOME$/lib/javafx.graphics.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

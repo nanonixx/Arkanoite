@@ -11,8 +11,10 @@ import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
+import javafx.scene.paint.ImagePattern;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.util.Duration;
@@ -23,9 +25,10 @@ import game.Objects.Pad;
 
 public class GameController extends Application {
     int scoreCount = 0;
+    boolean gameover = false;
     Label scoreLabel = new Label("Score: " + scoreCount);
 
-    public int livesCount = 3;
+    public int livesCount = 5;
     Label livesLabel = new Label("Lives: " + livesCount);
     Label gameOver = new Label();
     Button nextLevel = new Button();
@@ -64,6 +67,10 @@ public class GameController extends Application {
 
         Pad pad = new Pad(500);
         Ball ball = new Ball(0,599);
+
+        Image image = new Image("/game/images/discobola.png");
+        ImagePattern imageView = new ImagePattern(image);
+        ball.pelotinga.setFill(imageView);
 
 
 
@@ -135,7 +142,15 @@ public class GameController extends Application {
 
                 }
 
+                if (livesCount==0){
+                    gameover=true;
                 }
+
+                }
+
+
+
+
         }));
 
         timeline.setCycleCount(Timeline.INDEFINITE);
