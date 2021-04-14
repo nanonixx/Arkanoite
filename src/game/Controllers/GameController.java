@@ -16,6 +16,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.text.Font;
+import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import game.Objects.Ball;
@@ -50,10 +51,11 @@ public class GameController extends Application {
         livesLabel.setFont(Font.font(20));
         livesLabel.setTextFill(Color.WHITE);
 
-        gameOver.setLayoutY(300);
-        gameOver.setLayoutX(500);
-        gameOver.setFont(Font.font(20));
+        gameOver.setLayoutY(236);
+        gameOver.setLayoutX(306);
+        gameOver.setFont(Font.font(64));
         gameOver.setTextFill(Color.WHITE);
+        gameOver.setTextAlignment(TextAlignment.CENTER);
 
         nextLevel.setLayoutX(300);
         nextLevel.setLayoutY(500);
@@ -129,7 +131,7 @@ public class GameController extends Application {
                     if(livesCount == 0){
 
                         canvas.getChildren().clear();
-                        gameOver.setText("ah te moriste\nPUNTUACION: " + scoreCount);
+                        gameOver.setText("GAME OVER\nSCORE: " + scoreCount);
                         canvas.getChildren().add(gameOver);
                         ball.timeline.stop();
 
