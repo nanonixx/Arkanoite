@@ -1,6 +1,7 @@
 package game.Controllers;
 
 
+import com.sun.source.tree.Scope;
 import game.Objects.Brick.Brick;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -26,7 +27,7 @@ public class GameController extends Application {
 
     public int livesCount = 3;
     Label livesLabel = new Label("Lives: " + livesCount);
-    Label gameOver = new Label("ah te moriste");
+    Label gameOver = new Label();
     Button nextLevel = new Button();
 
     @Override
@@ -121,6 +122,7 @@ public class GameController extends Application {
                     if(livesCount == 0){
 
                         canvas.getChildren().clear();
+                        gameOver.setText("ah te moriste\nPUNTUACION: " + scoreCount);
                         canvas.getChildren().add(gameOver);
                         ball.timeline.stop();
 
