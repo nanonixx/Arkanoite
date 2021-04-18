@@ -6,6 +6,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
@@ -21,7 +23,6 @@ import java.util.List;
 
 public class Ranking extends Application {
     int[] records = new int[6];
-    int[] elbueno = new int[5];
 
     @FXML
     Label top1, top2, top3, top4, top5;
@@ -34,6 +35,7 @@ public class Ranking extends Application {
             int i = 0;
             while((line=inputStream.readLine()) != null) {
                 records[i] = Integer.parseInt(line);
+                i++;
             }
             inputStream.close();
         } catch (Exception e) {
@@ -61,9 +63,7 @@ public class Ranking extends Application {
     }
 }
 
-    public void addRecord(int score) {
-        records[5] = score;
-                                    //sort elements
+    public void sortRanking() {
         int temp;
         for (int i = 0; i <records.length; i++) {
             for (int j = i+1; j <records.length; j++) {
@@ -74,17 +74,18 @@ public class Ranking extends Application {
                 }
             }
         }
+    }
 
-        for (int i = 0; i < 5; i++) {
-            elbueno[i] = records[i];
-        }
-
-
-
+    public void addRecord(int score) {
+        sortRanking();
+        records[5] = score;
+        sortRanking();
+        log_writer();
     }
 
     public void showValues() {
         log_reader();
+        sortRanking();
         top1.setText(String.valueOf(records[0]));
         top2.setText(String.valueOf(records[1]));
         top3.setText(String.valueOf(records[2]));
@@ -93,15 +94,21 @@ public class Ranking extends Application {
     }
 
     @Override
-    public void start(Stage stage) throws Exception {
+    public void start(Stage stage) {
         showValues();
     }
 
     public void resetValues(ActionEvent actionEvent) {
-        for (int i = 0; i < 6; i++) {
-            records[i] = 0;
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "¿Seguro que quieres restaurar los records?", ButtonType.NO, ButtonType.YES);
+        alert.showAndWait();
+
+        if (alert.getResult() == ButtonType.YES){
+            for (int i = 0; i < 6; i++) {
+                records[i] = 0;
+            }
+            log_writer();
+            showValues();
         }
-        log_writer();
-        showValues();
+
     }
 }

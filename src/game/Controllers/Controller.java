@@ -25,9 +25,6 @@ public class Controller {
 
         gameController = new GameController();
         gameController.start(stage);
-
-
-
     }
 
     public void exit(ActionEvent actionEvent) {
@@ -43,10 +40,11 @@ public class Controller {
         stage.setTitle("Ranking");
         stage.setScene(scene);
         stage.show();
-        ranking.log_reader();
-        ranking.showValues();
+
 
         ranking.start(stage);
+        ranking.log_reader();
+        ranking.showValues();
 
 
     }

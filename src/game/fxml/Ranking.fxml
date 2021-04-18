@@ -34,27 +34,27 @@
                </font>
             </Label>
          </children></AnchorPane>
-      <Label fx:id="top1" layoutX="100.0" layoutY="89.0" text="5000">
+      <Label fx:id="top1" layoutX="100.0" layoutY="89.0" text=" ">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label fx:id="top2" layoutX="100.0" layoutY="132.0" text="2000">
+      <Label fx:id="top2" layoutX="100.0" layoutY="132.0" text=" ">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label fx:id="top3" layoutX="100.0" layoutY="175.0" text="1000">
+      <Label fx:id="top3" layoutX="100.0" layoutY="175.0" text=" ">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label fx:id="top4" layoutX="100.0" layoutY="221.0" text="500">
+      <Label fx:id="top4" layoutX="100.0" layoutY="221.0" text=" ">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label fx:id="top5" layoutX="100.0" layoutY="267.0" text="200">
+      <Label fx:id="top5" layoutX="100.0" layoutY="267.0" text=" ">
          <font>
             <Font size="24.0" />
          </font>
@@ -107,7 +107,12 @@
             </RadialGradient>
          </stroke>
       </Rectangle>
-      <Button fx:id="resetButton" layoutX="66.0" layoutY="327.0" mnemonicParsing="false" onAction="#resetValues" prefHeight="25.0" prefWidth="62.0" text="Reset" textFill="#645468">
+      <Button fx:id="resetButton" layoutX="117.0" layoutY="325.0" mnemonicParsing="false" onAction="#resetValues" prefHeight="25.0" prefWidth="62.0" text="Reset" textFill="#645468">
+         <effect>
+            <DropShadow />
+         </effect>
+      </Button>
+      <Button layoutX="25.0" layoutY="325.0" mnemonicParsing="false" onAction="#showValues" prefHeight="25.0" prefWidth="62.0" text="Show" textFill="#574357">
          <effect>
             <DropShadow />
          </effect>
