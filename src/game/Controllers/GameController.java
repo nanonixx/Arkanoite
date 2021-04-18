@@ -1,9 +1,7 @@
 package game.Controllers;
 
 
-import com.sun.source.tree.Scope;
 import game.Objects.Brick.Brick;
-import game.Objects.Ranking;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.application.Application;
@@ -26,7 +24,7 @@ import game.Main;
 import game.Objects.Pad;
 
 public class GameController extends Application {
-    Ranking ranking = new Ranking();
+    Controller controller;
     int scoreCount = 0;
     boolean gameover = false;
     Label scoreLabel = new Label("Score: " + scoreCount);
@@ -42,6 +40,7 @@ public class GameController extends Application {
         String CSS_PATH = "/game/css/game.css";
 
         Pane canvas = new Pane();
+//        controller.ranking.log_reader();
 
         scoreLabel.setLayoutY(565);
         scoreLabel.setLayoutX(30);
@@ -147,7 +146,8 @@ public class GameController extends Application {
                 }
 
                 if (livesCount==0){
-                    ranking.addRecord(scoreCount);
+                    controller.ranking.log_reader();
+                    controller.ranking.addRecord(scoreCount);
                     livesCount = -1;
                     gameover=true;
                 }

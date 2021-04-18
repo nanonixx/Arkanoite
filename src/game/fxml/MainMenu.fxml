@@ -7,7 +7,7 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.Controllers.Controller">
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.Controllers.Controller">
    <columnConstraints>
       <ColumnConstraints />
    </columnConstraints>
@@ -35,9 +35,18 @@
                <fill>
                   <RadialGradient centerX="0.48876404494382025" centerY="0.5" focusAngle="-56.31" focusDistance="-0.09523809523809523" radius="0.5357142857142857">
                      <stops>
-                        <Stop color="#4725c3b2" />
-                        <Stop color="#4725c3b2" offset="0.007407407407407408" />
-                        <Stop color="#140d0d" offset="1.0" />
+                        <Stop>
+                           <color>
+                              <Color red="0.27843138575553894" green="0.14509804546833038" blue="0.7647058963775635" opacity="0.6980392336845398" />
+                           </color></Stop>
+                        <Stop offset="0.007407407407407406">
+                           <color>
+                              <Color red="0.27843138575553894" green="0.14509804546833038" blue="0.7647058963775635" opacity="0.699999988079071" />
+                           </color></Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.0784313753247261" green="0.05098039284348488" blue="0.05098039284348488" />
+                           </color></Stop>
                      </stops>
                   </RadialGradient>
                </fill>
@@ -75,14 +84,14 @@
                   <Reflection />
                </effect>
             </QuadCurve>
-            <Button layoutX="282.0" layoutY="295.0" mnemonicParsing="false" onAction="#exit" prefHeight="54.0" prefWidth="142.0" text="EXIT" textFill="#130539">
+            <Button layoutX="501.0" layoutY="262.0" mnemonicParsing="false" onAction="#exit" prefHeight="54.0" prefWidth="142.0" text="EXIT" textFill="#130539">
                <font>
                   <Font name="Khmer OS" size="16.0" />
                </font>
                <effect>
                   <DropShadow />
                </effect></Button>
-            <Button layoutX="270.0" layoutY="219.0" mnemonicParsing="false" onAction="#start" prefHeight="54.0" prefWidth="167.0" text="START GAME" textFill="#290a36">
+            <Button layoutX="53.0" layoutY="262.0" mnemonicParsing="false" onAction="#start" prefHeight="54.0" prefWidth="167.0" text="START GAME" textFill="#290a36">
                <font>
                   <Font name="Khmer OS" size="16.0" />
                </font>
@@ -90,7 +99,13 @@
                   <DropShadow />
                </effect>
             </Button>
-            <Button layoutX="324.0" layoutY="356.0" mnemonicParsing="false" onAction="#goRanking" text="Ranking" />
+            <Button layoutX="268.0" layoutY="262.0" mnemonicParsing="false" onAction="#goRanking" prefHeight="54.0" prefWidth="167.0" text="RANKING" textFill="#130539">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect></Button>
          </children></AnchorPane>
    </children>
 </GridPane>

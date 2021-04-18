@@ -1,14 +1,116 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="game.fxml.Ranking"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="375.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.Controllers.Ranking">
+   <children>
+      <AnchorPane prefHeight="50.0" prefWidth="200.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="52.0" stroke="BLACK" strokeType="INSIDE" width="200.0">
+               <fill>
+                  <RadialGradient centerX="0.5" centerY="0.5" focusAngle="-138.01" focusDistance="0.13953488372093026" radius="0.6627906976744187">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.267520010471344" green="0.1444000005722046" blue="0.7599999904632568" opacity="0.7043478488922119" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </RadialGradient>
+               </fill></Rectangle>
+            <Label layoutX="64.0" layoutY="11.0" text="TOP 5" textFill="WHITE">
+               <font>
+                  <Font name="Berlin Sans FB" size="28.0" />
+               </font>
+            </Label>
+         </children></AnchorPane>
+      <Label fx:id="top1" layoutX="100.0" layoutY="89.0" text="5000">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="top2" layoutX="100.0" layoutY="132.0" text="2000">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="top3" layoutX="100.0" layoutY="175.0" text="1000">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="top4" layoutX="100.0" layoutY="221.0" text="500">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="top5" layoutX="100.0" layoutY="267.0" text="200">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="32.0" layoutY="91.0" text="#1" textFill="#895590">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </Label>
+      <Label layoutX="32.0" layoutY="134.0" text="#2" textFill="#895590">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </Label>
+      <Label layoutX="32.0" layoutY="177.0" text="#3" textFill="#895590">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </Label>
+      <Label layoutX="32.0" layoutY="223.0" text="#4" textFill="#895590">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Label>
+      <Label layoutX="33.0" layoutY="269.0" text="#5" textFill="#895590">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Label>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="224.0" layoutX="17.0" layoutY="83.0" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="OUTSIDE" strokeWidth="2.0" width="160.0">
+         <stroke>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.7441860465116279">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.5372549295425415" green="0.3333333432674408" blue="0.5647059082984924" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.007662835249042145">
+                     <color>
+                        <Color red="0.5372549295425415" green="0.3333333432674408" blue="0.5647059082984924" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </RadialGradient>
+         </stroke>
+      </Rectangle>
+      <Button fx:id="resetButton" layoutX="66.0" layoutY="327.0" mnemonicParsing="false" onAction="#resetValues" prefHeight="25.0" prefWidth="62.0" text="Reset" textFill="#645468">
+         <effect>
+            <DropShadow />
+         </effect>
+      </Button>
+   </children>
 </AnchorPane>
