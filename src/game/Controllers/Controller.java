@@ -41,11 +41,10 @@ public class Controller {
         stage.getIcons().add(new Image("/game/images/arkanoite_icon.png"));
         Scene scene = new Scene(root);
         stage.setTitle("Ranking");
-        ranking.log_reader();
-        ranking.showValues();
         stage.setScene(scene);
         stage.show();
-
+        ranking.log_reader();
+        ranking.showValues();
 
         ranking.start(stage);
 

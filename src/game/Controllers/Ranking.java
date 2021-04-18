@@ -47,10 +47,10 @@ public class Ranking extends Application {
 
             FileWriter log = new FileWriter("src/game/docs/log.txt", false);
             BufferedWriter outputStream = new BufferedWriter(log);
-            for (int score : records) {
-                outputStream.write(score +"\n");
-            }
-            for (int i = 0; i < 5; i++) {
+//            for (int score : records) {
+//                outputStream.write(score +"\n");
+//            }
+            for (int i = 0; i < 6; i++) {
                 outputStream.write(records[i]+"\n");
                 if (i == 4) outputStream.write(records[i]);
 
