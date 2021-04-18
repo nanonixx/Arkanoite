@@ -1,5 +1,6 @@
 package game.Controllers;
 
+import game.Objects.Ranking;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -7,7 +8,10 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
+import java.io.IOException;
+
 public class Controller {
+    GameController gameController;
     public void start(ActionEvent actionEvent) throws Exception {
 
         Parent root = FXMLLoader.load(getClass().getResource("/game/fxml/Game.fxml"));
@@ -18,7 +22,7 @@ public class Controller {
         stage.setScene(scene);
         stage.show();
 
-        GameController gameController = new GameController();
+        gameController = new GameController();
         gameController.start(stage);
 
 
@@ -27,5 +31,15 @@ public class Controller {
 
     public void exit(ActionEvent actionEvent) {
         System.exit(0);
+    }
+
+    public void goRanking(ActionEvent actionEvent) throws IOException {
+        gameController.ranking.showRecord();
+        Parent root = FXMLLoader.load(getClass().getResource("/game/fxml/Game.fxml"));
+        Stage stage = new Stage();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+
     }
 }

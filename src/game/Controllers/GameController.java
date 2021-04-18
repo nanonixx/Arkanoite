@@ -3,6 +3,7 @@ package game.Controllers;
 
 import com.sun.source.tree.Scope;
 import game.Objects.Brick.Brick;
+import game.Objects.Ranking;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.application.Application;
@@ -25,6 +26,7 @@ import game.Main;
 import game.Objects.Pad;
 
 public class GameController extends Application {
+    Ranking ranking = new Ranking();
     int scoreCount = 0;
     boolean gameover = false;
     Label scoreLabel = new Label("Score: " + scoreCount);
@@ -117,7 +119,7 @@ public class GameController extends Application {
 
                     }
                 }
-                //TODO HACER UN REINICIO A UN NUEVO NIVEL
+
                 if(brickFactory.getBrickList().isEmpty()){
                     restart(canvas, ball, pad, brickFactory);
                 }
@@ -145,6 +147,8 @@ public class GameController extends Application {
                 }
 
                 if (livesCount==0){
+                    ranking.addRecord(scoreCount);
+                    livesCount = -1;
                     gameover=true;
                 }
 
